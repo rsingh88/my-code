@@ -1,11 +1,11 @@
 import os
-#
-dirFiles = os.listdir("C:\\Users\\rsingh\\Downloads")
+
+dirFiles = os.listdir(os.getcwd())
 count = 1
-for file in os.listdir("C:\\Users\\rsingh\\Downloads"):
-	if file[:9] == dirFiles[count][:9]:
+for file in os.listdir(os.getcwd()):
+	if file[:12] == dirFiles[count][:12]:
 		print("duplicate file found: {}".format(file))
-		os.remove("C:\\Users\\rsingh\\Downloads\\"+file)
+		os.remove(os.path.join(os.getcwd(),file))
 	else:
 		# print("unique file {}".format(file))
 		pass
@@ -13,4 +13,3 @@ for file in os.listdir("C:\\Users\\rsingh\\Downloads"):
 		break
 	else:
 		count+=1
-
